@@ -1,0 +1,22 @@
+[
+  {
+    "id": "FAIL-001",
+    "project": "Aixion Control Tower",
+    "failure": "Approved requests appeared in misleading dashboard buckets.",
+    "badAssumption": "Approval status alone was enough for UI grouping.",
+    "rootCause": "The approval lifecycle state model was too loose.",
+    "fix": "Canonical states and grouped approval buckets were added.",
+    "testAddedOrNeeded": "Dashboard bucket regression tests for approved, executing, ready, failed, denied, and expired states.",
+    "whatItProves": "I understand that state modeling affects product trust."
+  },
+  {
+    "id": "FAIL-002",
+    "project": "Tradebot",
+    "failure": "The bot produced signals but did not execute trades.",
+    "badAssumption": "Strategy quality or gating was probably the main issue.",
+    "rootCause": "Signals could not reliably map to broker-tradable contracts.",
+    "fix": "Improved contract resolution and fallback handling with safety constraints.",
+    "testAddedOrNeeded": "Executable contract resolution regression tests and redacted before/after diagnostics.",
+    "whatItProves": "I can separate symptoms from root cause."
+  }
+]
