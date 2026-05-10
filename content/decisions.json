@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DEC-001",
+    "project": "Aixion Control Tower",
+    "decision": "Freeze approved payload using approved_payload_hash.",
+    "context": "An approval must apply to the exact payload, not only a request ID.",
+    "chosenPath": "Hash the approved payload and validate before execution.",
+    "rejectedPath": "Approve only the request ID.",
+    "reason": "A stale or tampered payload could execute under a valid approval.",
+    "tradeoff": "Adds implementation complexity but protects approval integrity."
+  },
+  {
+    "id": "DEC-002",
+    "project": "Aixion Control Tower",
+    "decision": "MCP gateway waits before forwarding mutating calls.",
+    "context": "A child MCP server should not receive dangerous requests before approval.",
+    "chosenPath": "Gateway creates an approval request and waits.",
+    "rejectedPath": "Forward first and approve later.",
+    "reason": "Forward-first destroys the safety model.",
+    "tradeoff": "Adds latency but proves actual human control before execution."
+  },
+  {
+    "id": "DEC-003",
+    "project": "MCP Shield",
+    "decision": "Treat safe alternatives as an MVP safety requirement.",
+    "context": "Blocking risky tool calls without guidance creates friction and pushes users around the system.",
+    "chosenPath": "When blocking a mutating call, suggest safer read-only or approval-first alternatives.",
+    "rejectedPath": "Only deny the request with a generic error.",
+    "reason": "A security product is more useful when it guides users toward safer workflows.",
+    "tradeoff": "Requires better policy messaging, but improves trust and usability."
+  },
+  {
+    "id": "DEC-004",
+    "project": "Tradebot",
+    "decision": "Prioritize executable contract resolution before strategy tuning.",
+    "context": "The bot generated signals but did not execute trades reliably.",
+    "chosenPath": "Diagnose broker-instrument mapping, executable symbols, fallback constraints, and feed freshness.",
+    "rejectedPath": "Keep tuning strategy scores while execution mapping remains broken.",
+    "reason": "A trading strategy has no practical value if it cannot map to tradable instruments.",
+    "tradeoff": "Less exciting than strategy work, but more important for real execution."
+  }
+]
