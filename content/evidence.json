@@ -1,0 +1,79 @@
+[
+  {
+    "id": "EV-001",
+    "title": "Approval lifecycle state model fixed",
+    "project": "Aixion Control Tower",
+    "type": "Product Correctness",
+    "status": "Implemented",
+    "maturity": 4,
+    "claimSupported": "I use QA thinking to design safer product workflows.",
+    "summary": "Approved items should not appear under misleading Action Required buckets unless they are truly awaiting execution or ready for PR.",
+    "links": []
+  },
+  {
+    "id": "EV-002",
+    "title": "Approved payload hash integrity",
+    "project": "Aixion Control Tower",
+    "type": "Security Control",
+    "status": "Implemented",
+    "maturity": 4,
+    "claimSupported": "I design execution-safety controls.",
+    "summary": "Approval freezes the exact payload hash and the runner blocks stale or tampered payloads.",
+    "links": []
+  },
+  {
+    "id": "EV-003",
+    "title": "MCP gateway wait-mode proof target",
+    "project": "Aixion Control Tower",
+    "type": "Demo Target",
+    "status": "Next Proof Target",
+    "maturity": 2,
+    "claimSupported": "I create human-in-the-loop systems where automation needs control.",
+    "summary": "A mutating MCP request should not reach a child server until approval exists.",
+    "links": []
+  },
+  {
+    "id": "EV-004",
+    "title": "MCP Shield gateway model",
+    "project": "MCP Shield",
+    "type": "Architecture",
+    "status": "Designed",
+    "maturity": 3,
+    "claimSupported": "I design safety layers for AI tool-call workflows.",
+    "summary": "Client requests pass through a gateway, policy decision layer, approval layer, audit trail, and then child MCP server only when allowed.",
+    "links": []
+  },
+  {
+    "id": "EV-005",
+    "title": "Safe alternative behavior",
+    "project": "MCP Shield",
+    "type": "Safety UX",
+    "status": "Planned",
+    "maturity": 2,
+    "claimSupported": "I design control systems for risky automation.",
+    "summary": "When risky actions are blocked, the system should suggest a safer read-only or review-first alternative.",
+    "links": []
+  },
+  {
+    "id": "EV-006",
+    "title": "Contract-resolution failure diagnosis",
+    "project": "Tradebot",
+    "type": "Root-cause Analysis",
+    "status": "Implemented",
+    "maturity": 4,
+    "claimSupported": "I debug complex automation systems by separating symptoms from root causes.",
+    "summary": "The execution problem was traced to strategy outputs not mapping reliably to broker-tradable contracts.",
+    "links": []
+  },
+  {
+    "id": "EV-007",
+    "title": "Executable symbol and feed-stability focus",
+    "project": "Tradebot",
+    "type": "Runtime Diagnostics",
+    "status": "Active Build",
+    "maturity": 3,
+    "claimSupported": "I care about controls, tests, and real execution.",
+    "summary": "The system direction moved toward executable contracts, feed freshness, gates, and diagnostics instead of only strategy tuning.",
+    "links": []
+  }
+]
